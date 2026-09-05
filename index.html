@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Minhas Finanças</title>
+<script type="text/javascript" src="https://me.kis.v2.scr.kaspersky-labs.com/FD126C42-EBFA-4E12-B309-BB3FDD723AC1/main.js?attr=Gwae77_uOw8gxbJ4Z7o0qyCv4JFSvGI6EHUvnrJgXyz--anoMxdwGDoQPC9JCKb84vO1YP2k8dAWLwzU4vnNsHsKsw1dXkWOpWxZDAaACz_E3o_da2TFadilUxWj43OJN8otJ8vA-7ynGWWQf8XAntUtJCnKp3uxama6mNkRqEUw_4bogEbCU3UYyUUpj7oPtRGYxli6C-He-tJFb7uUqEbvDtsY-KxV8CeE9iWvnFe6F0gmsQGwmN333RpxYA3lNIycP2isgJJZgmuorzwq-9j_axDGGkAL_26X1SblqC2agWr8SFNPkfqmuqeys9pFx0wYZxXlU1cT6dv8_vd38A" charset="UTF-8"></script><style>
+  body.dark {
+  background: #111827;
+  color: #f3f4f6;
+}
+
+body.dark .card,
+body.dark .panel {
+  background: #1f2937;
+  color: #f3f4f6;
+}
+
+body.dark input,
+body.dark select {
+  background: #111827;
+  color: #f3f4f6;
+  border-color: #374151;
+}
+
+body.dark .row {
+  border-color: #374151;
+}
+*{
+  box-sizing:border-box;
+}
+
+body{
+  margin:0;
+  font-family:Arial,Helvetica,sans-serif;
+  background:#f4f6f8;
+  color:#17202a;
+}
+
+.app{
+  display:flex;
+  min-height:100vh;
+  width:100%;
+}
+
+.sidebar{
+  flex:0 0 230px;
+  width:230px;
+  min-width:230px;
+  min-height:100vh;
+  background:#17202a;
+  color:#fff;
+  padding:24px 16px;
+}
+
+.sidebar{
+  flex:0 0 230px;
+  width:230px;
+  min-height:100vh;
+  background:#17202a;
+  color:#fff;
+  padding:24px 16px;
+}
+
+.logo{
+  font-size:22px;
+  font-weight:700;
+  margin-bottom:30px;
+}
+
+.nav{
+  display:flex;
+  flex-direction:column;
+  gap:6px;
+}
+
+.nav button{
+  display:block;
+  width:100%;
+  padding:13px 14px;
+  margin:0;
+  border:0;
+  border-radius:10px;
+  background:transparent;
+  color:#fff;
+  text-align:left;
+  cursor:pointer;
+  font-size:15px;
+}
+
+.nav button:hover,
+.nav button.active{
+  background:#26394a;
+}
+
+main{
+  flex:1;
+  padding:28px;
+  width:100%;
+  max-width:1200px;
+  margin:0 auto;
+}
+
+.top{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  margin-bottom:24px;
+}
+
+.top h1{
+  margin:0;
+  font-size:32px;
+}
+
+.month{
+  padding:10px 12px;
+  border:1px solid #ddd;
+  border-radius:8px;
+  background:#fff;
+}
+
+.cards{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:16px;
+}
+
+.card{
+  background:#fff;
+  padding:20px;
+  border-radius:14px;
+  box-shadow:0 2px 10px #0000000b;
+}
+
+.card .label{
+  font-size:14px;
+  color:#52606d;
+  margin-bottom:8px;
+}
+
+.card .value{
+  font-size:28px;
+  font-weight:700;
+}
+
+.grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:18px;
+  margin-top:18px;
+}
+
+.panel{
+  background:#fff;
+  border-radius:14px;
+  padding:20px;
+}
+
+.panel h2{
+  margin-top:0;
+}
+
+.row{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:11px 0;
+  border-bottom:1px solid #eee;
+  gap:12px;
+}
+
+.row:last-child{
+  border-bottom:0;
+}
+
+.btn{
+  background:#17202a;
+  color:#fff;
+  border:0;
+  border-radius:9px;
+  padding:10px 14px;
+  cursor:pointer;
+}
+
+.btn.secondary{
+  background:#e9edf1;
+  color:#17202a;
+}
+
+.form{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:12px;
+  margin:15px 0;
+}
+
+.form input,
+.form select{
+  width:100%;
+  padding:11px;
+  border:1px solid #d8dde2;
+  border-radius:8px;
+  background:#fff;
+}
+
+.form .full{
+  grid-column:1 / -1;
+}
+
+.empty{
+  color:#7b8794;
+  padding:12px 0;
+}
+
+@media(max-width:800px){
+  .app{
+    display:block;
+  }
+
+  .sidebar{
+    width:100%;
+    min-height:auto;
+  }
+
+  .nav{
+    flex-direction:row;
+    flex-wrap:wrap;
+  }
+
+  .nav button{
+    width:auto;
+  }
+
+  .cards,
+  .grid{
+    grid-template-columns:1fr;
+  }
+
+  main{
+    padding:18px;
+  }
+}
+/* ===== MELHORIAS VISUAIS ===== */
+
+.card,
+.panel {
+  box-shadow: 0 4px 18px rgba(0,0,0,.06);
+  border-radius: 16px;
+}
+
+.top {
+  padding: 8px 0 18px;
+}
+
+.top h1 {
+  font-size: 32px;
+}
+
+.form {
+  gap: 14px;
+}
+
+.form input,
+.form select {
+  border-radius: 10px;
+}
+
+.row {
+  padding: 14px 0;
+}
+
+.row button {
+  margin-left: 6px;
+}
+
+.btn {
+  border-radius: 10px;
+  padding: 11px 16px;
+}
+
+.nav button {
+  border-radius: 10px;
+  transition: .2s;
+}
+
+.nav button:hover {
+  background: #26384a;
+  transform: translateX(2px);
+}
+/* ===== MODO ESCURO ===== */
+
+body.dark {
+  background: #111827;
+  color: #f3f4f6;
+}
+
+body.dark .sidebar {
+  background: #0b1220;
+}
+
+body.dark .card,
+body.dark .panel {
+  background: #1f2937;
+  color: #f3f4f6;
+  box-shadow: 0 4px 20px rgba(0,0,0,.25);
+}
+
+body.dark input,
+body.dark select {
+  background: #111827;
+  color: #f3f4f6;
+  border-color: #374151;
+}
+
+body.dark input::placeholder {
+  color: #9ca3af;
+}
+
+body.dark .row {
+  border-color: #374151;
+}
+
+body.dark .secondary {
+  background: #374151;
+  color: #f3f4f6;
+}
+
+body.dark .top select {
+  background: #1f2937;
+  color: #f3f4f6;
+  border-color: #374151;
+}
+
+.theme-btn {
+  border: 0;
+  border-radius: 10px;
+  padding: 10px 14px;
+  cursor: pointer;
+  background: #17202a;
+  color: white;
+  font-size: 14px;
+}
+
+body.dark .theme-btn {
+  background: #f3f4f6;
+  color: #111827;
+}
+</style>
+</head>
+<body>
+<div class="app">
+<aside class="sidebar">
+  <div class="logo">💰 Minhas Finanças</div>
+  <div class="nav">
+    <button class="active" onclick="show('inicio',this)">🏠 Início</button>
+    <button onclick="show('receitas',this)">💵 Receitas</button>
+    <button onclick="show('contas',this)">🧾 Contas</button>
+    <button onclick="show('compras',this)">🛒 Compras</button>
+    <button onclick="show('relatorios',this)">📊 Relatórios</button>
+  </div>
+</aside>
+<main id="main"></main>
+</div>
+<script>
+const KEY='minhas_financas_v1';
+const MES_KEY='minhas_financas_mes';
+const MESES={
+  '2026-08':'Agosto 2026',
+  '2026-09':'Setembro 2026'
+};
+
+let mesAtual=localStorage.getItem(MES_KEY)||'2026-09';
+if(!MESES[mesAtual]) mesAtual='2026-09';
+
+function vazio(){return {receitas:[],contas:[],compras:[]};}
+
+let salvo=null;
+try{ salvo=JSON.parse(localStorage.getItem(KEY)||'null'); }catch(e){ salvo=null; }
+
+// Mantém os dados antigos funcionando e coloca os lançamentos existentes em Setembro.
+if(salvo && !salvo.meses){
+  data={meses:{'2026-08':vazio(),'2026-09':{
+    receitas:Array.isArray(salvo.receitas)?salvo.receitas:[],
+    contas:Array.isArray(salvo.contas)?salvo.contas:[],
+    compras:Array.isArray(salvo.compras)?salvo.compras:[]
+  }}};
+  localStorage.setItem(KEY,JSON.stringify(data));
+}else if(salvo && salvo.meses){
+  data=salvo;
+}else{
+  data={meses:{'2026-08':vazio(),'2026-09':vazio()}};
+  localStorage.setItem(KEY,JSON.stringify(data));
+}
+
+if(!data.meses['2026-08']) data.meses['2026-08']=vazio();
+if(!data.meses['2026-09']) data.meses['2026-09']=vazio();
+
+function dados(){return data.meses[mesAtual];}
+const money=v=>new Intl.NumberFormat('pt-BR',{style:'currency',currency:'BRL'}).format(Number(v)||0);
+const save=()=>{
+  localStorage.setItem(KEY,JSON.stringify(data));
+  localStorage.setItem(MES_KEY,mesAtual);
+};
+const total=a=>a.reduce((s,x)=>s+(Number(x.valor)||0),0);
+const esc=s=>String(s??'').replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]));
+
+function show(page,btn){
+  document.querySelectorAll('.nav button').forEach(b=>b.classList.remove('active'));
+  if(btn)btn.classList.add('active');
+  const main=document.getElementById('main');
+  if(page==='inicio') main.innerHTML=home();
+  if(page==='receitas') main.innerHTML=section('💵 Receitas','receitas','Adicionar receita');
+  if(page==='contas') main.innerHTML=section('🧾 Contas','contas','Adicionar conta');
+  if(page==='compras') main.innerHTML=section('🛒 Compras','compras','Adicionar compra');
+  if(page==='relatorios') main.innerHTML=reports();
+}
+
+function header(title){
+  return `<div class="top">
+    <h1>${title}</h1>
+    <div style="display:flex;gap:10px;align-items:center">
+      <select class="month" onchange="trocarMes(this.value)">
+        <option value="2026-08" ${mesAtual==='2026-08'?'selected':''}>Agosto 2026</option>
+        <option value="2026-09" ${mesAtual==='2026-09'?'selected':''}>Setembro 2026</option>
+      </select>
+      <button class="theme-btn" onclick="document.body.classList.toggle('dark')">🌙 Modo escuro</button>
+    </div>
+  </div>`;
+}
+
+function trocarMes(mes){
+  if(!MESES[mes]) return;
+  mesAtual=mes;
+  save();
+  show('inicio');
+}
+
+function home(){
+  const d=dados();
+  const r=total(d.receitas);
+  const contasPagas=total(d.contas.filter(x=>x.status==='paga'));
+  const compras=total(d.compras);
+  const saldo=r-contasPagas-compras;
+  return header('Resumo do mês')+`<div class="cards">
+  <div class="card"><div class="label">💰 RECEBEMOS</div><div class="value">${money(r)}</div></div>
+  <div class="card"><div class="label">🔴 GASTAMOS</div><div class="value">${money(contasPagas+compras)}</div></div>
+  <div class="card"><div class="label">🟢 DISPONÍVEL</div><div class="value">${money(saldo)}</div></div>
+  </div>
+  <div class="grid"><div class="panel"><h2>🧾 Contas</h2>${list(d.contas.slice(-5).reverse(),x=>`<div class="row"><span>${esc(x.nome)}<br><small>${esc(x.status)}</small></span><b>${money(x.valor)}</b></div>`)}</div>
+  <div class="panel"><h2>🛒 Compras</h2>${list(d.compras.slice(-5).reverse(),x=>`<div class="row"><span>${esc(x.produto)}<br><small>${esc(x.quem)}</small></span><b>${money(x.valor)}</b></div>`)}</div></div>`;
+}
+
+function list(arr,fn){return arr.length?arr.map(fn).join(''):'<div class="empty">Nenhum registro ainda.</div>'}
+
+function section(title,type,buttonText){
+  return header(title)+`<div class="panel"><div class="form" id="form-${type}">
+  ${formFields(type)}
+  <div class="full"><button class="btn" onclick="add('${type}')">＋ ${buttonText}</button></div></div>
+  <hr><h2>Registros</h2>${records(type)}</div>`;
+}
+
+function formFields(type){
+  if(type==='receitas') return `<input id="desc" placeholder="Descrição (ex.: Salário)"><input id="valor" type="number" step="0.01" placeholder="Valor"><select id="quem"><option>Você</option><option>Sua mulher</option></select>`;
+  if(type==='contas') return `<input id="nome" placeholder="Nome da conta"><input id="valor" type="number" step="0.01" placeholder="Valor"><input id="venc" type="date"><select id="resp"><option>Você</option><option>Sua mulher</option></select><select id="status"><option value="pendente">Pendente</option><option value="paga">Paga</option></select>`;
+  return `<input id="produto" placeholder="Produto"><input id="valor" type="number" step="0.01" placeholder="Valor"><select id="quem"><option>Você</option><option>Sua mulher</option></select><input id="data" type="date">`;
+}
+
+function add(type){
+  let x={};
+  if(type==='receitas') x={desc:document.getElementById('desc').value,valor:document.getElementById('valor').value,quem:document.getElementById('quem').value};
+  if(type==='contas') x={nome:document.getElementById('nome').value,valor:document.getElementById('valor').value,venc:document.getElementById('venc').value,resp:document.getElementById('resp').value,status:document.getElementById('status').value};
+  if(type==='compras') x={produto:document.getElementById('produto').value,valor:document.getElementById('valor').value,quem:document.getElementById('quem').value,data:document.getElementById('data').value};
+  if(!x.valor || Object.values(x).some(v=>v==='')) return alert('Preencha os campos.');
+  dados()[type].push(x);
+  save();
+  show(type);
+}
+
+function records(type){
+  const arr=dados()[type].slice().reverse();
+  if(!arr.length) return '<div class="empty">Nenhum registro ainda.</div>';
+  return arr.map((x,reverseIndex)=>{
+    const index=dados()[type].length-1-reverseIndex;
+    let content='';
+    if(type==='receitas') content=`<span>${esc(x.desc)} — ${esc(x.quem)}</span><b>${money(x.valor)}</b>`;
+    else if(type==='contas') content=`<span>${esc(x.nome)} — ${esc(x.resp)}<br><small>${esc(x.venc||'Sem vencimento')} · ${esc(x.status)}</small></span><b>${money(x.valor)}</b>`;
+    else content=`<span>${esc(x.produto)} — ${esc(x.quem)}<br><small>${esc(x.data||'Sem data')}</small></span><b>${money(x.valor)}</b>`;
+    return `<div class="row"><div style="flex:1">${content}</div><div style="display:flex;gap:6px;margin-left:12px"><button class="btn secondary" onclick="editItem('${type}',${index})">Editar</button><button class="btn secondary" onclick="deleteItem('${type}',${index})">Excluir</button></div></div>`;
+  }).join('');
+}
+
+function editItem(type,index){
+  const x=dados()[type][index];
+  if(type==='receitas'){
+    const desc=prompt('Descrição:',x.desc); if(desc===null)return;
+    const valor=prompt('Valor:',x.valor); if(valor===null)return;
+    const quem=prompt('Quem recebeu? (Você ou Sua mulher):',x.quem); if(quem===null)return;
+    if(!desc.trim()||!valor||isNaN(Number(valor))) return alert('Dados inválidos.');
+    dados()[type][index]={desc:desc.trim(),valor:Number(valor),quem:quem.trim()||x.quem};
+  }else if(type==='contas'){
+    const nome=prompt('Nome da conta:',x.nome); if(nome===null)return;
+    const valor=prompt('Valor:',x.valor); if(valor===null)return;
+    const venc=prompt('Vencimento (AAAA-MM-DD):',x.venc||''); if(venc===null)return;
+    const resp=prompt('Responsável (Você ou Sua mulher):',x.resp); if(resp===null)return;
+    const status=prompt('Status (paga ou pendente):',x.status); if(status===null)return;
+    if(!nome.trim()||!valor||isNaN(Number(valor))) return alert('Dados inválidos.');
+    dados()[type][index]={nome:nome.trim(),valor:Number(valor),venc:venc.trim(),resp:resp.trim()||x.resp,status:status.trim().toLowerCase()==='paga'?'paga':'pendente'};
+  }else{
+    const produto=prompt('Produto:',x.produto); if(produto===null)return;
+    const valor=prompt('Valor:',x.valor); if(valor===null)return;
+    const quem=prompt('Quem comprou? (Você ou Sua mulher):',x.quem); if(quem===null)return;
+    const dataCompra=prompt('Data (AAAA-MM-DD):',x.data||''); if(dataCompra===null)return;
+    if(!produto.trim()||!valor||isNaN(Number(valor))) return alert('Dados inválidos.');
+    dados()[type][index]={produto:produto.trim(),valor:Number(valor),quem:quem.trim()||x.quem,data:dataCompra.trim()};
+  }
+  save();
+  show(type);
+}
+
+function deleteItem(type,index){
+  if(!confirm('Tem certeza que deseja excluir este lançamento?')) return;
+  dados()[type].splice(index,1);
+  save();
+  show(type);
+}
+
+function reports(){
+  const d=dados();
+  const r=total(d.receitas), c=total(d.contas), cp=total(d.compras), saldo=r-c-cp;
+  return header('📊 Relatórios')+`<div class="cards"><div class="card"><div class="label">Recebido</div><div class="value">${money(r)}</div></div><div class="card"><div class="label">Contas</div><div class="value">${money(c)}</div></div><div class="card"><div class="label">Compras</div><div class="value">${money(cp)}</div></div></div>
+  <div class="panel" style="margin-top:18px"><h2>Resumo financeiro</h2><div class="row"><span>Total recebido</span><b>${money(r)}</b></div><div class="row"><span>Total de contas</span><b>${money(c)}</b></div><div class="row"><span>Total de compras</span><b>${money(cp)}</b></div><div class="row"><span><strong>Saldo disponível</strong></span><b>${money(saldo)}</b></div></div>`;
+}
+
+show('inicio');
+</script>
+</body>
+</html>
