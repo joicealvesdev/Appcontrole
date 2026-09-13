@@ -1,40 +1,40 @@
-# Minhas Finanças
+# 💰 Minhas Finanças
 
 Aplicação web para controle financeiro doméstico. O sistema permite acompanhar receitas, contas e compras organizadas por mês, com resumo financeiro e persistência local no navegador.
 
 A aplicação foi migrada de HTML, CSS e JavaScript para React, Vite e TypeScript, preservando as funcionalidades existentes.
 
-## Tecnologias
+## 🛠 Tecnologias
 
-- React 19
-- React DOM
-- Vite
-- TypeScript
-- HTML semântico
-- CSS responsivo
-- ESLint
+- ⚛️ React 19
+- ⚛️ React DOM
+- ⚡ Vite
+- 📘 TypeScript
+- 🏷️ HTML semântico
+- 📱 CSS responsivo
+- ✨ ESLint
 
 O projeto não utiliza bibliotecas externas de UI, roteamento ou gerenciamento global de estado.
 
-## Funcionalidades
+## ✨ Funcionalidades
 
-- Dashboard com receitas, gastos e saldo disponível.
-- Cadastro, edição e exclusão de receitas.
-- Cadastro, edição e exclusão de contas.
-- Controle de vencimento, responsável e status das contas.
-- Cadastro, edição e exclusão de compras.
-- Navegação entre Início, Receitas, Contas, Compras e Relatórios.
-- Seleção de mês.
-- Modo claro e escuro.
-- Layout responsivo para desktop e dispositivos móveis.
-- Formatação de valores em real brasileiro.
-- Persistência dos dados usando `localStorage`.
-- Migração automática do formato antigo de dados.
+- 📊 Dashboard com receitas, gastos e saldo disponível.
+- ➕ Cadastro, edição e exclusão de receitas.
+- 💳 Cadastro, edição e exclusão de contas.
+- 📅 Controle de vencimento, responsável e status das contas.
+- 🛒 Cadastro, edição e exclusão de compras.
+- 🧭 Navegação entre Início, Receitas, Contas, Compras e Relatórios.
+- 📆 Seleção de mês.
+- 🌓 Modo claro e escuro.
+- 📲 Layout responsivo para desktop e dispositivos móveis.
+- 💵 Formatação de valores em real brasileiro.
+- 💾 Persistência dos dados usando `localStorage`.
+- 🔄 Migração automática do formato antigo de dados.
 
-## Pré-requisitos
+## 📋 Pré-requisitos
 
-- Node.js instalado.
-- npm disponível no PATH.
+- 🟢 Node.js instalado.
+- 📦 npm disponível no PATH.
 
 Ambiente utilizado na validação:
 
@@ -43,7 +43,7 @@ Node.js v24.18.0
 npm 11.16.0
 ```
 
-## Como acessar o projeto
+## 🚀 Como acessar o projeto
 
 No PowerShell ou Prompt de Comando do Windows:
 
@@ -61,7 +61,7 @@ http://localhost:5173/
 
 Também é possível usar o endereço exibido pelo Vite no terminal, normalmente `http://127.0.0.1:5173/`.
 
-## Comandos disponíveis
+## 📝 Comandos disponíveis
 
 Execute os comandos dentro de `f:\Appcontrole\appcontrole`:
 
@@ -72,7 +72,7 @@ npm run preview   # visualiza localmente o build gerado
 npm run lint      # executa o ESLint
 ```
 
-## Estrutura do projeto
+## 📁 Estrutura do projeto
 
 ```text
 appcontrole/
@@ -103,7 +103,7 @@ appcontrole/
 └── vite.config.ts
 ```
 
-### Responsabilidades principais
+### 🎯 Responsabilidades principais
 
 - `components`: componentes visuais reutilizáveis.
 - `domain/finance`: tipos e regras de cálculo financeiro.
@@ -111,7 +111,7 @@ appcontrole/
 - `App.tsx`: coordenação do estado e composição das telas.
 - `App.css` e `index.css`: estilos da aplicação e regras responsivas.
 
-## Arquitetura
+## 🏗️ Arquitetura
 
 O fluxo principal da aplicação é:
 
@@ -128,7 +128,7 @@ App
 
 O estado financeiro é mantido no `App.tsx`. Os cálculos ficam isolados no domínio financeiro e a persistência é acessada exclusivamente pelo serviço de storage.
 
-## Regras importantes
+## ⚠️ Regras importantes
 
 - Os dados atuais são organizados nos meses `2026-08` e `2026-09`.
 - Dados legados sem a propriedade `meses` são migrados para setembro de 2026.
@@ -136,7 +136,7 @@ O estado financeiro é mantido no `App.tsx`. Os cálculos ficam isolados no dom�
 - O relatório apresenta o total bruto de contas, incluindo contas pendentes.
 - Os dados ficam armazenados apenas no navegador atual; não existe backend.
 
-## Validação
+## ✅ Validação
 
 Antes de considerar uma alteração concluída, execute:
 
@@ -147,7 +147,7 @@ npm run lint
 
 A aplicação também deve ser verificada no navegador em desktop e mobile, incluindo navegação, formulários, edição, exclusão, troca de mês e modo escuro.
 
-## Arquivos legados e limpeza
+## 🗑️ Arquivos legados e limpeza
 
 O arquivo `index.html` na raiz contém a implementação original e permanece como referência durante a migração. Ele não participa do build da aplicação Vite.
 
@@ -160,12 +160,12 @@ Os seguintes arquivos do template Vite não possuem referências no código atua
 
 Eles foram preservados nesta etapa para evitar exclusões sem autorização. O `appcontrole/public/favicon.svg` é utilizado pelo `appcontrole/index.html` e deve ser mantido.
 
-## Melhorias futuras
+## 🚦 Melhorias futuras
 
-- Substituir `localStorage` por uma API para sincronização entre dispositivos.
-- Persistir a preferência de tema.
-- Substituir `prompt`, `confirm` e `alert` por diálogos acessíveis próprios.
-- Adicionar testes automatizados para cálculos e migração.
-- Permitir o cadastro de novos meses sem alterar o código-fonte.
+- 🌐 Substituir `localStorage` por uma API para sincronização entre dispositivos.
+- 🎨 Persistir a preferência de tema.
+- 🪟 Substituir `prompt`, `confirm` e `alert` por diálogos acessíveis próprios.
+- 🧪 Adicionar testes automatizados para cálculos e migração.
+- 📅 Permitir o cadastro de novos meses sem alterar o código-fonte.
 
 A documentação detalhada da aplicação está em [appcontrole/README.md](appcontrole/README.md).
