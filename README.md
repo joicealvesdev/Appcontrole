@@ -1,4 +1,4 @@
-# 💰 Minhas Finanças
+#  Minhas Finanças
 
 Aplicação web para controle financeiro doméstico. O sistema permite acompanhar receitas, contas e compras organizadas por mês, com resumo financeiro e persistência local no navegador.
 
