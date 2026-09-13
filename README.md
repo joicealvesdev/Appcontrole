@@ -6,35 +6,35 @@ A aplicação foi migrada de HTML, CSS e JavaScript para React, Vite e TypeScrip
 
 ## 🛠 Tecnologias
 
-- ⚛️ React 19
-- ⚛️ React DOM
-- ⚡ Vite
-- 📘 TypeScript
-- 🏷️ HTML semântico
-- 📱 CSS responsivo
-- ✨ ESLint
+-  React 19
+-  React DOM
+-  Vite
+-  TypeScript
+-  HTML semântico
+-  CSS responsivo
+-  ESLint
 
 O projeto não utiliza bibliotecas externas de UI, roteamento ou gerenciamento global de estado.
 
 ## ✨ Funcionalidades
 
-- 📊 Dashboard com receitas, gastos e saldo disponível.
-- ➕ Cadastro, edição e exclusão de receitas.
-- 💳 Cadastro, edição e exclusão de contas.
-- 📅 Controle de vencimento, responsável e status das contas.
-- 🛒 Cadastro, edição e exclusão de compras.
-- 🧭 Navegação entre Início, Receitas, Contas, Compras e Relatórios.
-- 📆 Seleção de mês.
-- 🌓 Modo claro e escuro.
-- 📲 Layout responsivo para desktop e dispositivos móveis.
-- 💵 Formatação de valores em real brasileiro.
-- 💾 Persistência dos dados usando `localStorage`.
-- 🔄 Migração automática do formato antigo de dados.
+- Dashboard com receitas, gastos e saldo disponível.
+- Cadastro, edição e exclusão de receitas.
+- Cadastro, edição e exclusão de contas.
+- Controle de vencimento, responsável e status das contas.
+- Cadastro, edição e exclusão de compras.
+- Navegação entre Início, Receitas, Contas, Compras e Relatórios.
+- Seleção de mês.
+- Modo claro e escuro.
+- Layout responsivo para desktop e dispositivos móveis.
+- Formatação de valores em real brasileiro.
+- Persistência dos dados usando `localStorage`.
+- Migração automática do formato antigo de dados.
 
 ## 📋 Pré-requisitos
 
-- 🟢 Node.js instalado.
-- 📦 npm disponível no PATH.
+- Node.js instalado.
+- npm disponível no PATH.
 
 Ambiente utilizado na validação:
 
